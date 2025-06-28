@@ -1,0 +1,23 @@
+{
+	"title": "UI",
+	"description": "Base components and utilities",
+	"icon": "Boxes",
+	"root": true,
+	"pages": [
+		"---Getting Started---",
+		"getting-started/introduction",
+		"getting-started/installation",
+		"getting-started/changelog",
+		"getting-started/roadmap",
+		"---Everything by NewUI---",
+		"everything-by-NewUI/base-components",
+		"[LayoutTemplate][Blocks](https://pro.newui.dev/blocks)",
+		"[PanelLeftDashed][Templates](https://pro.newui.dev/templates)",
+		"---Foundation---",
+		"foundation/colors",
+		"foundation/theming",
+		"foundation/components",
+		"---UI---",
+		"...components"
+	]
+}

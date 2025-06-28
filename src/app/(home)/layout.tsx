@@ -9,7 +9,31 @@ export const metadata = {
 
 export default function Layout({ children }: { children: ReactNode }) {
 	return (
-		<HomeLayout {...baseOptions}>
+		<HomeLayout
+			{...baseOptions}
+			links={[
+				{
+					text: "Docs",
+					url: "/docs/getting-started/introduction",
+					secondary: false,
+				},
+				{
+					text: "Components",
+					url: "/docs/components",
+					secondary: false,
+				},
+				{
+					text: "Blocks",
+					url: "https://pro.hextaui.com/blocks",
+					secondary: false,
+				},
+				{
+					text: "Templates",
+					url: "https://pro.hextaui.com/themes",
+					secondary: false,
+				},
+			]}
+		>
 			{children}
 			<Footer />
 		</HomeLayout>

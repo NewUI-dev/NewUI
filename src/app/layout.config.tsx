@@ -23,27 +23,5 @@ export const baseOptions: BaseLayoutProps = {
 		),
 	},
 	// see https://fumadocs.dev/docs/ui/navigation/links
-	links: [
-		{
-			text: "Docs",
-			url: "/docs/ui/getting-started/introduction",
-			secondary: false,
-		},
-		{
-			text: "Components",
-			url: "/docs/ui/foundation/components",
-			secondary: false,
-		},
-		{
-			text: "Blocks",
-			url: "https://pro.hextaui.com/blocks",
-			secondary: false,
-		},
-		{
-			text: "Themes",
-			url: "https://pro.hextaui.com/themes",
-			secondary: false,
-		},
-	],
 	githubUrl: "https://github.com/newui-dev/NewUI",
 };
