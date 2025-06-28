@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://newui.dev
+
+# Sitemaps
+Sitemap: https://newui.dev/sitemap.xml
