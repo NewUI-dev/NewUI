@@ -5,6 +5,15 @@ import Footer from "@/components/layouts/Footer";
 
 export const metadata = {
 	title: "NewUI",
+	description:
+		"A modern, customizable, developer-first UI component library for building production-grade web apps.",
+	keywords: [
+		"UI components",
+		"React",
+		"Next.js",
+		"Tailwind CSS",
+		"Component library",
+	],
 };
 
 export default function Layout({ children }: { children: ReactNode }) {
@@ -12,11 +21,6 @@ export default function Layout({ children }: { children: ReactNode }) {
 		<HomeLayout
 			{...baseOptions}
 			links={[
-				{
-					text: "Docs",
-					url: "/docs/getting-started/introduction",
-					secondary: false,
-				},
 				{
 					text: "Components",
 					url: "/docs/components",
@@ -30,6 +34,11 @@ export default function Layout({ children }: { children: ReactNode }) {
 				{
 					text: "Templates",
 					url: "https://pro.hextaui.com/themes",
+					secondary: false,
+				},
+				{
+					text: "Showcase",
+					url: "/showcase",
 					secondary: false,
 				},
 			]}
