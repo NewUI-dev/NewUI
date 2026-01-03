@@ -1,0 +1,89 @@
+---
+title: "AnimatedButton"
+description: "A premium animated button component with multiple variants and smooth animations."
+---
+
+# AnimatedButton
+
+A premium animated button component with multiple variants and smooth animations. Part of the NewUI design system, inspired by MagicUI and Aceternity UI.
+
+## Installation
+
+To install the component, run the following command:
+
+```bash
+npx shadcn-ui@latest add animated-button
+```
+
+Or copy the component code directly from the registry.
+
+## Usage
+
+Here's a basic example of how to use the AnimatedButton component:
+
+```tsx
+import { AnimatedButton } from '@/components/animated-button';
+
+function App() {
+  return (
+    <div className="flex gap-4">
+      <AnimatedButton>Default</AnimatedButton>
+      <AnimatedButton variant="primary">Primary</AnimatedButton>
+      <AnimatedButton variant="secondary">Secondary</AnimatedButton>
+      <AnimatedButton variant="ghost">Ghost</AnimatedButton>
+      <AnimatedButton variant="outline">Outline</AnimatedButton>
+    </div>
+  );
+}
+```
+
+## Props
+
+| Prop      | Type                                      | Default   | Description                                    |
+| --------- | ----------------------------------------- | --------- | ---------------------------------------------- |
+| variant   | `'default' \| 'primary' \| 'secondary' \| 'ghost' \| 'outline'` | `'default'` | The visual style of the button               |
+| animated  | `boolean`                                 | `true`    | Whether the button has subtle animations       |
+| size      | `'sm' \| 'default' \| 'lg'`               | `'default'` | The size of the button                       |
+| className | `string`                                  | `undefined` | Additional classes to apply to the button    |
+| children  | `React.ReactNode`                         | `undefined` | The content of the button                    |
+
+## Variants
+
+The AnimatedButton component comes with several built-in variants:
+
+- **default**: A standard button with primary colors
+- **primary**: A gradient button with indigo-to-purple-to-pink colors (NewUI signature gradient)
+- **secondary**: A secondary button with muted colors
+- **ghost**: A transparent button that becomes visible on hover
+- **outline**: A button with a border and transparent background
+
+## Sizes
+
+The component supports three sizes:
+
+- **sm**: Small button (height: 36px)
+- **default**: Standard button (height: 40px)
+- **lg**: Large button (height: 44px)
+
+## Customization
+
+You can customize the AnimatedButton by passing additional className props:
+
+```tsx
+<AnimatedButton 
+  className="bg-gradient-to-r from-cyan-500 to-blue-500"
+  variant="primary"
+>
+  Custom Gradient
+</AnimatedButton>
+```
+
+## Accessibility
+
+The AnimatedButton component follows accessibility best practices:
+
+- Proper focus states with visible focus rings
+- Correct ARIA attributes
+- Keyboard navigation support
+- Proper contrast ratios for text
+- Disabled state handling

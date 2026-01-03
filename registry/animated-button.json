@@ -1,0 +1,34 @@
+{
+  "name": "animated-button",
+  "type": "components:ui",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "components/animated-button.tsx",
+      "content": "import React from 'react';\nimport { cn } from '@/lib/utils';\n\nexport interface AnimatedButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {\n  /**\n   * The variant of the button\n   * @default 'default'\n   */\n  variant?: 'default' | 'primary' | 'secondary' | 'ghost' | 'outline';\n  /**\n   * Whether the button has a subtle animation\n   * @default true\n   */\n  animated?: boolean;\n  /**\n   * The size of the button\n   * @default 'default'\n   */\n  size?: 'sm' | 'default' | 'lg';\n}\n\nconst AnimatedButton = React.forwardRef<HTMLButtonElement, AnimatedButtonProps>(\n  ({ variant = 'default', animated = true, size = 'default', className, children, ...props }, ref) => {\n    return (\n      <button\n        ref={ref}\n        className={cn(\n          'inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50',\n          // Size variants\n          size === 'sm' && 'h-9 rounded-md px-3',\n          size === 'default' && 'h-10 px-4 py-2',\n          size === 'lg' && 'h-11 rounded-md px-8',\n          // Base styles\n          'relative overflow-hidden',\n          // Variant styles with dark mode support\n          variant === 'default' && \n            'bg-primary text-primary-foreground shadow hover:bg-primary/90 dark:bg-primary/90 dark:hover:bg-primary/80',\n          variant === 'primary' && \n            'bg-gradient-to-r from-blue-500 to-purple-600 text-white shadow-lg hover:shadow-blue-500/30 dark:from-blue-600 dark:to-purple-700',\n          variant === 'secondary' && \n            'bg-secondary text-secondary-foreground shadow-sm hover:bg-secondary/80 dark:bg-secondary/80 dark:hover:bg-secondary/70',\n          variant === 'ghost' && \n            'hover:bg-accent hover:text-accent-foreground dark:hover:bg-accent/80 dark:hover:text-accent-foreground',\n          variant === 'outline' && \n            'border border-input bg-background shadow-sm hover:bg-accent hover:text-accent-foreground dark:border-input/50 dark:bg-background/50 dark:hover:bg-accent/30',\n          // Enhanced animation classes\n          animated && 'transform transition-all duration-300 ease-in-out hover:-translate-y-0.5 hover:shadow-xl active:scale-95',\n          className\n        )}\n        aria-label={props['aria-label'] || undefined}\n        role=\"button\"\n        tabIndex={props.disabled ? -1 : 0}\n        {...props}\n      >\n        {animated && (\n          <>\n            <span \n              className=\"absolute inset-0 h-full w-full bg-gradient-to-r from-transparent via-white/20 to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100 -skew-x-12 -translate-x-full group-hover:translate-x-full\" \n              aria-hidden=\"true\"\n            />\n            <span \n              className=\"absolute h-full w-full bg-white opacity-0 transition-opacity duration-300 group-hover:opacity-5 dark:bg-black/10\" \n              aria-hidden=\"true\"\n            />\n          </>\n        )}\n        <span className=\"relative z-10\">{children}</span>\n      </button>\n    );\n  }\n);\n\nAnimatedButton.displayName = 'AnimatedButton';\n\nexport { AnimatedButton };\n",
+      "type": "registry:component",
+      "target": ""
+    }
+  ],
+  "tailwind": {
+    "config": {
+      "plugins": []
+    }
+  },
+  "cssVars": {},
+  "meta": {
+    "displayName": "Animated Button",
+    "description": "A premium animated button component with multiple variants and smooth animations",
+    "category": "ui",
+    "keywords": [
+      "button",
+      "animated",
+      "ui",
+      "component",
+      "interactive"
+    ]
+  }
+}

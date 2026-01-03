@@ -18,6 +18,7 @@
 		"foundation/theming",
 		"foundation/components",
 		"---UI---",
-		"...components"
+		"...components",
+		"components/animated-button"
 	]
 }
